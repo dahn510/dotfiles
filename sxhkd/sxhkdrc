@@ -2,9 +2,31 @@
 # wm independent hotkeys
 #
 
+# Run flameshot when print screen key is pressed
+Print
+	flameshot gui
+
+# Backlight control (Fn + <F4>/<F5>)
+XF86MonBrightnessUp
+	brightnessctl s +10%
+
+XF86MonBrightnessDown
+	brightnessctl s 10%-
+
+#Volume up/down/mute
+# here I had to use -c option to specify the card
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+
+XF86AudioLowerVolume
+	amixer set Master 5%-
+
+XF86AudioMute
+	amixer set Master toggle
+
 # terminal emulator
 super + BackSpace
-	urxvt
+	kitty
 
 # program launcher
 super + @space
@@ -119,27 +141,3 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-
-#
-# ALSA audo shortcuts
-#
-
-# Volume up/down/mute
-
-XF86AudioRaiseVolume
-	amixer set Master 5%+
-
-XF86AudioLowerVolume
-	amixer set Master 5%-
-
-XF86AudioMute
-	amixer set Master toggle
-
-
-#
-# Flameshot (screenshot tool)
-#
-
-Print
-	flameshot gui
