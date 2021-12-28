@@ -27,6 +27,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Floating terminals
+Plug 'voldikss/vim-floaterm'
+
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+" Syntax highlighting for kitty.conf
+Plug 'fladson/vim-kitty'
+
 " CoC Extentions
 	" Clang looks for build flags for it to understand the source code.
 	" It looks at compile_commands.json to get the information.

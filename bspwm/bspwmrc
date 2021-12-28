@@ -2,7 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 # check if an external monitor is connected
 # then reconfigure monitor workspaces
@@ -31,3 +31,9 @@ bspc rule -a Screenkey manage=off
 # autostart
 # Launch Polybar
 bash $HOME/.config/polybar/launch.sh
+
+# Change resolution to 1080p
+xrandr --output eDP-1 --mode 1920x1080
+
+# Restore background image
+~/.fehbg &

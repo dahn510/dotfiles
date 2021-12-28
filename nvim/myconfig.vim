@@ -43,5 +43,10 @@ set signcolumn=yes
 let g:airline#extensions#tabline#enabled=1
 " Theme
 let g:airline_theme='minimalist'
+let g:airline_powerline_fonts = 1
+
+
+" Floating terminals
+let g:floaterm_wintype = 'float'
 
 " ===============================================
