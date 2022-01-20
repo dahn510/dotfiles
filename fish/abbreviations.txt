@@ -1,0 +1,6 @@
+abbr -a -U -- b 'cd .. && ls'
+abbr -a -U -- bb 'cd - && ls'
+abbr -a -U -- gaa 'git add --a && git status'
+abbr -a -U -- l ls
+abbr -a -U -- la 'ls -a'
+abbr -a -U -- lla 'ls -la'
