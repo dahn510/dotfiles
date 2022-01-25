@@ -115,10 +115,10 @@ interval = 3
 format-connected-background = ${colors.red}
 format-disconnected-background = ${colors.red}
 
-format-connected = 直:<ramp-signal>
+format-connected = 直 <ramp-signal>
 format-connected-padding = 1
 
-format-disconnected = 睊:<label-disconnected>
+format-disconnected = 睊 <label-disconnected>
 format-disconnected-padding = 1
 
 ramp-signal-0 = ⣀

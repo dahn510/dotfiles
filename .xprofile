@@ -1,0 +1,4 @@
+# Autostarts natively sourced by LightDM
+
+# Start picom compositor for bspwm
+picom --experimental-backends &
