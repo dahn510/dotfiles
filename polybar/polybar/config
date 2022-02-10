@@ -1,0 +1,64 @@
+; Include modules
+include-file = /home/daniel/.config/polybar/modules
+
+; Colors picked from WLOP 61_shadow4 with color.adobe.com/create/image
+[colors]
+black = #FF0D0D0D
+white = #FFA6938F
+red = #FF592222
+gray = #FF3B403F
+light-gray = #FF545959
+
+; Main monitor bar setup
+[bar/main]
+
+monitor =${env:ext_dp:DP-1}
+monitor-fallback = eDP-1
+
+font-0 = "BlexMono Nerd Font Mono:style=Light,Regular:size=12"
+font-1 = "Symbols Nerd Font:style=2048-em:size=15"
+; Font below is required for emoji's and braile
+font-2 = "DejaVu Sans:style=Book:size=11"
+font-3 = "Noto Color Emoji:style=Regular:scale=10" 
+
+fixed-center = true
+
+width = 99%
+height = 3%
+
+offset-x = 0.5%
+offset-y = 0.3%
+
+tray-position = center
+
+background = ${colors.black}
+foreground = ${colors.white}
+
+radius = 10
+
+line-size = 3
+line-color = ${colors.red}
+
+padding = 0
+
+module-margin = 0
+
+dim-value = 1
+
+modules-left = bspwm
+modules-center = 
+modules-right = pulseaudio network date battery
+
+; make the bar hides behind full screen windows
+wm-restack = bspwm
+
+; Second monitor bar setup
+[bar/secondary]
+inherit = bar/main
+monitor = ${env:int_dp:eDP-1}
+
+tray-position = none
+
+modules-left = bspwm
+modules-center = 
+modules-right =
