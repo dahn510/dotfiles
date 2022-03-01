@@ -1,5 +1,5 @@
 ; Include modules
-include-file = /home/daniel/.config/polybar/modules
+include-file = /home/danny/.config/polybar/modules
 
 ; Colors picked from WLOP 61_shadow4 with color.adobe.com/create/image
 [colors]
@@ -12,14 +12,13 @@ light-gray = #FF545959
 ; Main monitor bar setup
 [bar/main]
 
-monitor =${env:ext_dp:DP-1}
-monitor-fallback = eDP-1
+monitor = eDP1
+monitor-fallback = eDP1
 
-font-0 = "BlexMono Nerd Font Mono:style=Light,Regular:size=12"
+font-0 = "BlexMono Nerd Font Mono:style=Light,Regular:size=15"
 font-1 = "Symbols Nerd Font:style=2048-em:size=15"
 ; Font below is required for emoji's and braile
-font-2 = "DejaVu Sans:style=Book:size=11"
-font-3 = "Noto Color Emoji:style=Regular:scale=10" 
+font-2 = "FreeMono:size=15"
 
 fixed-center = true
 
@@ -55,7 +54,7 @@ wm-restack = bspwm
 ; Second monitor bar setup
 [bar/secondary]
 inherit = bar/main
-monitor = ${env:int_dp:eDP-1}
+monitor = DP1 
 
 tray-position = none
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # Terminate already running bar instances
 killall -q polybar
@@ -11,13 +11,13 @@ killall -q polybar
 connected_dp="$(xrandr -q | awk '/ connected/ {print $0}')"
 
 # Get primary display port
-ext_dp=$(echo "$connected_dp" | awk '/ primary/ && / connected/ {print $1}')
+int_dp=$(echo "$connected_dp" | awk '/ primary/ && / connected/ {print $1}')
 
 # Get secondary display port
-int_dp=$(echo "$connected_dp" | awk '!/ primary/ && / connected/ {print $1}')
+ext_dp=$(echo "$connected_dp" | awk '!/ primary/ && / connected/ {print $1}')
 
 if [[ -n "$(echo $ext_dp)" ]]; then
-	echo "External monitor detected"
+	echo "+++++ POLYBAR: External monitor detected +++++"
 	polybar main 2>&1 | tee -a /tmp/polybar.log & disown
 	polybar secondary 2>&1 | tee -a /tmp/polybar.log & disown
 else

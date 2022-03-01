@@ -8,7 +8,7 @@ function set_dual_monitor()
 	# ----Configure these values----
 	# Position of the secondary monitor relative to the primary monitor
 	# options: --above, --below, --right-of, --left-of
-	secondary_mon_position="--above"
+	secondary_mon_position="--right-of"
 	# Resolution of two monitors
 	# options: --auto, -- mode "pixel"x"pixel"
 	# e.g --mode 1920x1080

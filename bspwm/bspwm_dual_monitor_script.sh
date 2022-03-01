@@ -16,8 +16,8 @@ function bspwm_dual_monitor()
 
 	# My preferred desktop set up for dual monitors
 	# Change this if you want something different
-	primary_desktop="6 7 8 9 0"
-	secondary_desktop="1 2 3 4 5"
+	secondary_desktop="6 7 8 9 0"
+	primary_desktop="1 2 3 4 5"
 
 	# Use this if no external monitor is plugged in
 	one_mon_desktop="1 2 3 4 5 6 7 8 9 0"

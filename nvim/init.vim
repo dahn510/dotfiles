@@ -47,20 +47,23 @@ let g:coc_global_extensions =
 			\[
 			\ 'coc-clangd',
 			\ 'coc-cmake',
-			\ 'coc-htmldjango',
 			\ 'coc-json',
+			\ 'coc-html',
+			\ 'coc-css',
+			\ 'coc-fish',
 			\ 'coc-markdown-preview-enhanced',
 			\ 'coc-pyright',
 			\ 'coc-rls',
 			\ 'coc-rust-analyzer',
 			\ 'coc-sh',
-			\ 'coc-markdownlint'
+			\ 'coc-markdownlint',
+			\ 'coc-eslint',
 			\]
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 " Import custom configurations and plugin configurations
-if filereadable(expand("~/.config/nvim/myconfig.vim"))
-	source ~/.config/nvim/myconfig.vim
+if filereadable(expand("~/.config/nvim/config.vim"))
+	source ~/.config/nvim/config.vim
 endif

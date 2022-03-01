@@ -30,7 +30,7 @@ super + BackSpace
 
 # program launcher
 super + @space
-	rofi -show run
+	dmenu_run	
 
 # make sxhkd reload its configuration files:
 super + Escape
