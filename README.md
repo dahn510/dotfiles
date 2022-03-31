@@ -12,35 +12,14 @@ Terminal emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
 ### Notable packages I installed:
 ```
 bspwm
-brightnessctl
-clang
-cmake
-cmake-curses-gui
 cowsay
-curl
-dbeaver-jdk
-docker
 feh
 fish
 flameshot
-g++
-git
-gzip
-inxi
 kitty
-make
-mpv
-neofetch
 neovim
-pavucontrol
-python
-rofi
 dmenu
 thunar
-ripgrep
-tree
-unzip
-zip
 ```
 
 #### Dual Monitor:
