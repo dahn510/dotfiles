@@ -7,7 +7,7 @@ let mapleader=";"
 
 " Note: Indentation purely with hard tabs.
 set shiftwidth=3
-set tabstop=4
+set tabstop=3
 
 " Note: Set color scheme to molokai
 colorscheme molokai
@@ -69,4 +69,12 @@ nnoremap <silent> <F10> :FloatermKill<CR>
 tnoremap <silent> <F10> <C-\><C-n>:FloatermKill<CR>
 nnoremap <silent> <F11> :FloatermToggle<CR>
 tnoremap <silent> <F11> <C-\><C-n>:FloatermToggle<CR>
+
+
+" MarkdownPreview
+" Auto start preview when entering markdown files
+let g:mkdp_auto_start = 1
+
+
+let g:mkdp_browser = 'vivaldi-stable'
 " ===============================================

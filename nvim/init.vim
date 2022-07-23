@@ -14,14 +14,8 @@ Plug 'luochen1990/rainbow'
 " File tree
 Plug 'preservim/nerdtree'
 
-" Verilog HDA plugin
-Plug 'vhda/verilog_systemverilog.vim'
-
 " Autoclose parenthesis and etc
 Plug 'Townk/vim-autoclose'
-
-" Git integration
-Plug 'tpope/vim-fugitive'
 
 " Airline for beautiful status bar
 Plug 'vim-airline/vim-airline'
@@ -58,6 +52,7 @@ let g:coc_global_extensions =
 			\ 'coc-sh',
 			\ 'coc-markdownlint',
 			\ 'coc-eslint',
+			\ 'coc-go',
 			\]
 
 " List ends here. Plugins become visible to Vim after this call.
