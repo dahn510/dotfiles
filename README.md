@@ -9,17 +9,13 @@ Compositor (for the transparent background blur): [picom](https://github.com/ysh
 Shell: [fish](https://fishshell.com)\
 Terminal emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
 
-### Notable packages I installed:
+### Other packages I use:
 ```
-bspwm
+exa
+bat
+fortune
 cowsay
-feh
-fish
 flameshot
-kitty
-neovim
-dmenu
-thunar
 ```
 
 #### Dual Monitor:
