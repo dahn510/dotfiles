@@ -1,5 +1,10 @@
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.nvim/plugins')
+" ===============================================
+" Plugins
+" ===============================================
+" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
 
 " Declare the list of plugins.
 " Conquer of Completion
@@ -30,7 +35,15 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Syntax highlighting for kitty.conf
 Plug 'fladson/vim-kitty'
 
-" CoC Extentions
+" ===============================================
+" Themes
+" ===============================================
+Plug 'thedenisnikulin/vim-cyberpunk'
+Plug 'sainnhe/everforest'
+
+" ===============================================
+" CoC Extenstions 
+" ===============================================
 	" Clang looks for build flags for it to understand the source code.
 	" It looks at compile_commands.json to get the information.
 	" To generate this, use bear command: make clean; bear -- make
