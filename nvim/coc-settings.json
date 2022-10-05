@@ -40,6 +40,6 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.virtualTextPrefix": "🧙",
+  "diagnostic.virtualTextPrefix": "🧙 ",
   "codeLens.enable": true
 }
