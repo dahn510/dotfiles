@@ -1,6 +1,7 @@
 # Danny's Dotfiles
 
-## What I Use:
+## What I Use
+
 Status bar: [polybar](https://github.com/polybar/polybar)\
 Text editor: [NeoVim](https://github.com/neovim/neovim)\
 Tiling window manager: [bpswm](https://github.com/baskerville/bspwm)\
@@ -9,8 +10,9 @@ Compositor (for the transparent background blur): [picom](https://github.com/ysh
 Shell: [fish](https://fishshell.com)\
 Terminal emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
 
-### Other packages I use:
-```
+### Other packages I use
+
+```bash
 exa
 bat
 fortune
@@ -18,8 +20,10 @@ cowsay
 flameshot
 ```
 
-#### Dual Monitor:
-![Dual monitor screenshot](images/dual_mon.png)
+#### Screenshots
 
-#### Single Monitor:
-![Single monitor screenshot](images/single_mon.png)
+NeoVim setup:
+![Single monitor screenshot](images/vim_setup.png)
+
+Desktop:
+![Desktop screenshot](images/dual_mon.png)
