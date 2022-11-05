@@ -41,5 +41,19 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextPrefix": "🧙 ",
-  "codeLens.enable": true
+  "codeLens.enable": true,
+
+	"languageserver": {
+		"golang": {
+			"settings": {
+				"gopls": {
+					"formatting.gofumpt": true
+				}
+			},
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"filetypes": ["go"]
+		}
+	}
+
 }
