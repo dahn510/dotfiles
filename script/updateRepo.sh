@@ -2,7 +2,8 @@
 
 baseDir="${HOME}/.config"
 
-subDirs=("kitty" "nvim" "fish" "picom" "polybar" "sxhkd" "vivaldi-theme")
+# Don't copy neovim config, let the submodule handle it
+subDirs=("kitty" "fish" "picom" "polybar" "sxhkd" "vivaldi-theme")
 
 function copyConfigsHere() {
     for i in "${subDirs[@]}"; do
