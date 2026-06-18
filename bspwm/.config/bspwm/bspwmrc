@@ -1,0 +1,27 @@
+#! /bin/sh
+
+source $HOME/.screenlayout/topdown.sh
+
+xsetroot -cursor_name left_ptr # https://wiki.archlinux.org/index.php/Cursor_themes#Change_X_shaped_default_cursor
+~/.fehbg &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+#bspc wm --reorder-monitors DP-2 DP-0
+bspc monitor DP-0 -d 1 2 3 4 5
+bspc monitor DP-2 -d 6 7 8 9 10
+
+bspc config border_width         2
+bspc config window_gap          8
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a discord desktop='^5'
+bspc rule -a Thunar state=floating rectangle=1080x720+0+0 center=on
+
+bash $HOME/.config/polybar/launch.sh
+
+picom &

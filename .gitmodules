@@ -1,3 +1,0 @@
-[submodule "nvimConfig"]
-	path = nvimConfig
-	url = https://github.com/dahn510/nvimConfig.git

@@ -1,0 +1,65 @@
+[push]
+    autoSetupRemote = true
+[user]
+	name = Daniel Ahn
+	editor = nvim
+[alias]
+	hist = log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
+	staged = diff --cached
+	unstage = restore --staged
+	latest = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+[commit]
+	verbose = true
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
+[branch]
+	sort = -committerdate
+[diff]
+	colorMoved = plain
+	algorithm = histogram
+	mnemonicPrefix = true
+	renames = true
+[checkout]
+	defaultRemote = origin
+[init]
+	defaultBranch = main
+[color]
+	ui = true
+[pull]
+	rebase = false
+	ff = only
+[rebase]
+	autoStash = true
+	updateRefs = true
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[include]
+	path = .gitconfig.local
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpencryption = tls
+	smtpserverport = 587
+	annotate = yes
+    confirm = always
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	required = true
+	smudge = git-lfs smudge -- %f
+[help]
+	autocorrect = prompt
+[column]
+	ui = auto
+[tag]
+	sort = version:refname
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[rerere]
+	enabled = true
+	autoupdate = true
