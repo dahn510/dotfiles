@@ -1,0 +1,12 @@
+configuration {
+		modes: "combi";
+		combi-modes: "drun,run,window";
+		font: "monospace bold 11";
+		fixed-num-lines: true;
+		matching: "fuzzy";
+		combi-hide-mode-prefix: false;
+}
+
+window {
+		width: 30%;
+}

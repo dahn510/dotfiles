@@ -15,7 +15,7 @@ super + BackSpace
 
 # program launcher
 super + Return
-	dmenu_run
+	rofi -show combi -combi-modes "drun,run,window"
 
 # make sxhkd reload its configuration files:
 super + r
@@ -124,6 +124,6 @@ XF86AudioPlay
 
 XF86AudioPrev
 		playerctl previous
+
 XF86AudioNext
 		playerctl next
-
