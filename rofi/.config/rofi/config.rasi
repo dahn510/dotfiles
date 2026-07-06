@@ -10,3 +10,5 @@ configuration {
 window {
 		width: 30%;
 }
+
+@theme "everforest_dark_hard"
