@@ -1,4 +1,8 @@
 * {
+    /**
+		everforest dark
+		https://github.com/sainnhe/everforest/tree/master
+    **/
     bg-dim: #1e2326;
     bg0: #272e33;
     bg1: #2e383c;
