@@ -46,6 +46,7 @@ require('lazy').setup({
   },
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = 'main',
   },
   {
     'kylechui/nvim-surround',
