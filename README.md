@@ -3,7 +3,7 @@
 setup  
 install  
 ```
-stow bspwm sxhkd kitty neovim polybar python uv vlc bashtop zsh curl wget exa bat rofi
+stow bspwm sxhkd kitty neovim polybar python uv vlc bashtop zsh curl wget exa bat rofi tree-sitter pulseaudio pulseaudio-bluetooth blueman ripgrep
 ```
 symlink dotfiles  
 ```
