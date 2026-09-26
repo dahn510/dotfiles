@@ -3,7 +3,11 @@
 setup  
 install  
 ```
-stow bspwm sxhkd kitty neovim polybar python uv vlc bashtop zsh curl wget exa bat rofi tree-sitter pulseaudio pulseaudio-bluetooth blueman ripgrep
+stow bspwm sxhkd kitty neovim polybar python uv vlc bashtop zsh curl wget exa bat rofi tree-sitter pulseaudio pulseaudio-bluetooth bluez bluez-utils blueman ripgrep noto-fonts-emoji brightnessctl zen-browser-bin
+```
+enable units
+```
+sudo systemctl enable --now bluetooth.service
 ```
 symlink dotfiles  
 ```
