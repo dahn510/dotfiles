@@ -126,6 +126,27 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+-- Battery widget
+mybattery = wibox.widget.textbox()
+awful.widget.watch(
+	'sh -c \'printf "%s %s" "$(cat /sys/class/power_supply/BAT0/capacity)" "$(cat /sys/class/power_supply/BAT0/status)"\'',
+	30,
+	function(widget, stdout)
+		local percentage, status = stdout:match("(%d+)%s+(%S+)")
+
+		local icon = "🔋"
+
+		if status == "Charging" then
+			icon = "⚡"
+		elseif status == "Full" then
+			icon = "🔋"
+		end
+
+		widget.text = string.format("%s %s%%", icon, percentage)
+	end,
+	mybattery
+)
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
 	awful.button({}, 1, function(t)
@@ -242,6 +263,7 @@ awful.screen.connect_for_each_screen(function(s)
 			mykeyboardlayout,
 			wibox.widget.systray(),
 			mytextclock,
+			mybattery,
 			s.mylayoutbox,
 		},
 	})
@@ -406,6 +428,7 @@ clientkeys = gears.table.join(
 	awful.key({}, "XF86AudioMute", function()
 		awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false)
 	end),
+
 	-- Media Keys
 	awful.key({}, "XF86AudioPlay", function()
 		awful.util.spawn("playerctl play-pause", false)
@@ -415,6 +438,14 @@ clientkeys = gears.table.join(
 	end),
 	awful.key({}, "XF86AudioPrev", function()
 		awful.util.spawn("playerctl previous", false)
+	end),
+
+	-- screen brightness
+	awful.key({}, "XF86MonBrightnessUp", function()
+		awful.util.spawn("brightnessctl set +10%")
+	end),
+	awful.key({}, "XF86MonBrightnessDown", function()
+		awful.util.spawn("brightnessctl set 10%-")
 	end)
 )
 
