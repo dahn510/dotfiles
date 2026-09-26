@@ -374,7 +374,42 @@ globalkeys = gears.table.join(
 	-- Menubar
 	awful.key({ modkey }, "p", function()
 		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	end, { description = "show the menubar", group = "launcher" }),
+
+	-- Volume Keys
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%", false)
+	end),
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false)
+	end),
+	awful.key({}, "XF86AudioMute", function()
+		awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false)
+	end),
+
+	-- Media Keys
+	awful.key({}, "XF86AudioPlay", function()
+		awful.util.spawn("playerctl play-pause", false)
+	end),
+	awful.key({}, "XF86AudioNext", function()
+		awful.util.spawn("playerctl next", false)
+	end),
+	awful.key({}, "XF86AudioPrev", function()
+		awful.util.spawn("playerctl previous", false)
+	end),
+
+	-- screen brightness
+	awful.key({}, "XF86MonBrightnessUp", function()
+		awful.util.spawn("brightnessctl set +10%")
+	end),
+	awful.key({}, "XF86MonBrightnessDown", function()
+		awful.util.spawn("brightnessctl set 10%-")
+	end),
+
+	-- Misc
+	awful.key({}, "Print", function()
+		awful.util.spawn("flameshot gui")
+	end)
 )
 
 clientkeys = gears.table.join(
@@ -416,37 +451,7 @@ clientkeys = gears.table.join(
 	awful.key({ modkey, "Shift" }, "m", function(c)
 		c.maximized_horizontal = not c.maximized_horizontal
 		c:raise()
-	end, { description = "(un)maximize horizontally", group = "client" }),
-
-	-- Volume Keys
-	awful.key({}, "XF86AudioLowerVolume", function()
-		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%", false)
-	end),
-	awful.key({}, "XF86AudioRaiseVolume", function()
-		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false)
-	end),
-	awful.key({}, "XF86AudioMute", function()
-		awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false)
-	end),
-
-	-- Media Keys
-	awful.key({}, "XF86AudioPlay", function()
-		awful.util.spawn("playerctl play-pause", false)
-	end),
-	awful.key({}, "XF86AudioNext", function()
-		awful.util.spawn("playerctl next", false)
-	end),
-	awful.key({}, "XF86AudioPrev", function()
-		awful.util.spawn("playerctl previous", false)
-	end),
-
-	-- screen brightness
-	awful.key({}, "XF86MonBrightnessUp", function()
-		awful.util.spawn("brightnessctl set +10%")
-	end),
-	awful.key({}, "XF86MonBrightnessDown", function()
-		awful.util.spawn("brightnessctl set 10%-")
-	end)
+	end, { description = "(un)maximize horizontally", group = "client" })
 )
 
 -- Bind all key numbers to tags.
