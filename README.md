@@ -31,3 +31,16 @@ tar -xf ~/Downloads/*.tar.xz -C ~/.local/share/fonts
 unzip ~/Downloads/fonts/*.zip -d ~/.local/share/fonts
 fc-cache -fv
 ```
+touchpad setting  
+[libinput doc](https://wayland.freedesktop.org/libinput/doc/latest) [configuration](https://wiki.archlinux.org/title/Libinput#Configuration)  
+```
+Section "InputClass"
+	Identifier "DELL08AF:00 06CB:76AF Touchpad"
+	Driver "libinput"
+	MatchIsTouchpad "on"
+	Option "AccelProfile" "adaptive"
+	Option "Tapping" "true"
+	Option "TappingDrag" "true"
+	Option "TappingDragLock" "true"
+EndSection
+```
