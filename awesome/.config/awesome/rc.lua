@@ -51,7 +51,9 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "default")
+beautiful.init(theme_path)
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -190,15 +192,64 @@ local tasklist_buttons = gears.table.join(
 	end)
 )
 
+-- wallpaper
+local function scandir(directory, filter)
+	local i, t, popen = 0, {}, io.popen
+	if not filter then
+		filter = function(s)
+			return true
+		end
+	end
+	print(filter)
+	for filename in popen('ls -a "' .. directory .. '"'):lines() do
+		if filter(filename) then
+			i = i + 1
+			t[i] = filename
+		end
+	end
+	return t
+end
+
+wp_timeout = 10
+wp_path = string.format("%s/.wallpapers/", os.getenv("HOME"))
+wp_filter = function(s)
+	return string.match(s, "%.png$") or string.match(s, "%.jpg$")
+end
+
+math.randomseed(os.time())
+wp_files = scandir(wp_path, wp_filter)
+
+--wp_timer = timer({ timeout = wp_timeout })
+--wp_timer:connect_signal("timeout", function()
+--	local wp_index = math.random(1, #wp_files)
+--
+--	-- set wallpaper to current index for all screens
+--	for s = 1, screen.count() do
+--		gears.wallpaper.maximized(wp_path .. wp_files[wp_index], s, true)
+--	end
+--
+--	-- stop the timer (we don't need multiple instances running at the same time)
+--	wp_timer:stop()
+--
+--	--restart the timer
+--	wp_timer.timeout = wp_timeout
+--	wp_timer:start()
+--end)
+--wp_timer:start()
+
 local function set_wallpaper(s)
 	-- Wallpaper
-	if beautiful.wallpaper then
-		local wallpaper = beautiful.wallpaper
-		-- If wallpaper is a function, call it with the screen
-		if type(wallpaper) == "function" then
-			wallpaper = wallpaper(s)
-		end
-		gears.wallpaper.maximized(wallpaper, s, true)
+	-- if beautiful.wallpaper then
+	-- 	local wallpaper = beautiful.wallpaper
+	-- 	-- If wallpaper is a function, call it with the screen
+	-- 	if type(wallpaper) == "function" then
+	-- 		wallpaper = wallpaper(s)
+	-- 	end
+	-- 	gears.wallpaper.maximized(wallpaper, s, true)
+	-- end
+	local wp_index = math.random(1, #wp_files)
+	for s = 1, screen.count() do
+		gears.wallpaper.maximized(wp_path .. wp_files[wp_index], s, true)
 	end
 end
 
@@ -629,3 +680,4 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 -- }}}
+beautiful.useless_gap = 2

@@ -48,6 +48,12 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
+screenlayout="$HOME/.screenlayout/default.sh"
+if [ -x "$screenlayout" ]; then
+		"$screenlayout"
+fi
+
 fcitx5 &
 blueman-applet &
+picom &
 exec awesome
